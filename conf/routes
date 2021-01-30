@@ -1,0 +1,114 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET         /                                            controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET         /count                                       controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET         /message                                     controllers.AsyncController.message
+#books
+#OPTIONS /*all                           controllers.Application.preflight(all)
+#customers
+POST        /getCustomers                                controllers.CustomersController.getCustomers()
+POST        /getCustomersById                            controllers.CustomersController.getCustomersById()
+POST        /createCustomer                              controllers.CustomersController.insertCustomer()
+POST        /setData                                     controllers.CustomersController.setData()
+#POST   /emptyTables
+POST        /setEnabled                                  controllers.CustomersController.setEnabled()
+POST        /deleteCustomers                             controllers.CustomersController.deleteCustomers()
+POST        /updateCustomer                              controllers.CustomersController.updateCustomer()
+POST        /getData                                     controllers.CustomersController.getData()
+#CustomersPhoneNoticies
+POST        /getCustomersPhoneNoticiesdetails            controllers.CustomersPhoneNoticies.getCustomersPhoneNoticiesdetails()
+POST        /insertPhoneNotice                           controllers.CustomersPhoneNoticies.insertPhoneNotice()
+POST        /getPhoneNoticiesByCustomerId                controllers.CustomersPhoneNoticies.getPhoneNoticiesByCustomerId()
+POST        /deletePhoneNotices                          controllers.CustomersPhoneNoticies.deletePhoneNotices()
+POST        /updatePhoneNotices                          controllers.CustomersPhoneNoticies.updatePhoneNotices()
+#Revisions
+POST        /getRevisionsAsJson                          controllers.RevisionsController.getRevisionsAsJson()
+POST        /getRevisions                                controllers.RevisionsController.getRevisions()
+POST        /getRevisionsDetails                         controllers.RevisionsController.getRevisionsDetails()
+POST        /createRevision                              controllers.RevisionsController.createRevision()
+POST        /insertRevision                              controllers.RevisionsController.insertRevision()
+POST        /insertZonesRevisions                        controllers.RevisionsController.insertZonesRevisions()
+POST        /insertPhoneNoticesRevision                  controllers.RevisionsController.insertPhoneNoticesRevision()
+POST        /insertAlarmUsersRevisions                   controllers.RevisionsController.insertAlarmUsersRevisions()
+POST        /getPhoneNoticiesRevisionByCustomerId        controllers.RevisionsController.getPhoneNoticiesRevisionByCustomerId()
+POST        /getAlarmUserRevisionByCustomerId            controllers.RevisionsController.getAlarmUserRevisionByCustomerId()
+POST        /getZoneRevisionByCustomerId                 controllers.RevisionsController.getZoneRevisionByCustomerId()
+POST        /setDataRevisions                            controllers.RevisionsController.setDataRevisions()
+#zones
+POST        /createZone                                  controllers.ZonesController.createZone()
+POST        /deleteZone                                  controllers.ZonesController.deleteZone()
+POST        /updateCustomer                              controllers.ZonesController.updateCustomer()
+POST        /getZonesByCustomerId                        controllers.ZonesController.getZonesByCustomerId()
+#AlarmUsers
+POST        /createAlarmUsers                            controllers.AlarmUsers.createAlarmUsers()
+POST        /deleteAlarmUser                             controllers.AlarmUsers.deleteAlarmUser()
+POST        /updateAlarmUser                             controllers.AlarmUsers.updateAlarmUser()
+POST        /getAlarmUserByCustomerId                    controllers.AlarmUsers.getAlarmUserByCustomerId()
+
+#installers
+POST        /insertInstaller                             controllers.InstallersController.insertInstaller()
+POST        /getInstallers                               controllers.InstallersController.getInstallers()
+POST        /getProfile                                  controllers.InstallersController.getInstallersById()
+POST        /updateProfile                               controllers.InstallersController.updateInstaller()
+POST        /getInstallersDataCc                         controllers.InstallersController.getInstallersDataCc()
+POST        /getConnectionsOfLastWeek                    controllers.InstallersController.getConnectionsOfLastWeek()
+
+POST        /updateInstallerPwd                          controllers.InstallersController.updateInstallerPwd()
+
+
+
+
+
+#Cc setDatacc
+POST        /getAllDataForCc                             controllers.CcController.getAllDataForCc()
+POST        /getAllDataForACc                            controllers.CcController.getAllDataForACc()
+
+POST        /getAllCustomersByUserId                     controllers.CcController.getAllCustomersByUserId()
+POST        /setDatacc                                   controllers.CcController.setDatacc()
+POST        /changeStatus                                controllers.CcController.changeStatusToInProgress()
+
+
+# Map static resources from the /public folder to the /iets URL path
+GET         /assets/*file                                controllers.Assets.versioned(path="/public", file: Asset)
+GET         /app/*file                                   controllers.WebAppAssets.at(path="webapp/", file: String)
+
+
+#Users getUsers  getPasswords
+POST        /register                                    controllers.UsersController.signUp()
+POST        /getPasswords                                controllers.UsersController.getPasswords()
+POST        /login                                       controllers.UsersController.login()
+POST        /updatePwd                                   controllers.UsersController.updatePwd()
+POST        /checkEmailIfExist                           controllers.UsersController.checkEmailIfExist()
+POST        /setActive                                   controllers.UsersController.setActive()
+POST        /getUsers                                    controllers.UsersController.getUsers()
+POST        /sendMessage                                 controllers.UsersController.sendMessage()
+
+
+#Notes
+POST        /getNotes                                    controllers.NotesController.getNotes()
+POST        /updateNote                                  controllers.NotesController.updateNote()
+POST        /insertNote                                  controllers.NotesController.insertNote()
+POST        /deleteNote                                  controllers.NotesController.deleteNote()
+POST        /sendMessage                                 controllers.UsersController.sendMessage()
+
+
+
+#Notifications
+POST        /getNotificationsByUserId                    controllers.NotificationsController.getNotificationsByUserId()
+POST        /updateNotification                          controllers.NotificationsController.updateNotification()
+POST        /insertNotification                          controllers.NotificationsController.insertNotification()
+POST        /deleteNotification                          controllers.NotificationsController.deleteNotification()
+GET         /testMailer/:recipient                       controllers.UsersController.sendMailTest(recipient: String)
+
+
+#ContactInformationsController
+POST        /addContactInformation                       controllers.ContactInformationsController.addContactInformation()
+POST        /deleteContactInformation                    controllers.ContactInformationsController.deleteContactInformation()
+POST        /updateContactInformation                    controllers.ContactInformationsController.updateContactInformation()
+POST        /getContactsInformations                     controllers.ContactInformationsController.getContactsInformations()
+POST        /getContactsInformationsByType                     controllers.ContactInformationsController.getContactsInformationsByType()

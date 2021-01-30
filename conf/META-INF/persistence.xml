@@ -1,0 +1,45 @@
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="defaultPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <non-jta-data-source>DefaultDS</non-jta-data-source>
+        <class>models.CustomersEntity</class>
+        <class>models.AlarmUsersEntity</class>
+        <class>models.PhoneNoticesEntity</class>
+        <class>models.ZonesEntity</class>
+        <class>models.AlarmUsersRevisionsEntity</class>
+        <class>models.PhoneNoticesRevisionsEntity</class>
+        <class>models.RevisionsEntity</class>
+        <class>models.ZonesRevisionsEntity</class>
+        <class>models.AlarmUsersEntity</class>
+        <class>models.AlarmUsersRevisionsEntity</class>
+        <class>models.PhoneNoticesEntity</class>
+        <class>models.PhoneNoticesRevisionsEntity</class>
+        <class>models.ZonesRevisionsEntity</class>
+        <class>models.InstallersEntity</class>
+        <class>models.AlarmUsersCcEntity</class>
+        <class>models.CustomersCcEntity</class>
+        <class>models.PhoneNoticesCcEntity</class>
+        <class>models.ZonesCcEntity</class>
+        <class>models.NotesEntity</class>
+        <class>models.UsersEntity</class>
+        <class>models.ContactInfoEntity</class>
+        <class>models.InfoCoredataEntity</class>
+        <class>models.CoredataEntity</class>
+        <class>models.CdataEntity</class>
+        <class>models.InstallersCustomersEntity</class>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/hdms_ibo_db_pr"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.useUnicode" value="true" />
+            <property name="hibernate.connection.characterEncoding" value="utf8_general_ci" />
+        </properties>
+    </persistence-unit>
+</persistence>
+
+
